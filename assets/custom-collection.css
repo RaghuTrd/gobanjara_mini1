@@ -1,0 +1,32 @@
+.collection-card__info {
+  margin-top: 0px;
+  padding: 20px;
+}
+.collection-card__inner {
+  box-shadow: 5px 5px #da553b;
+  border: 1.5px solid #da553b;
+}
+.font-medium {
+  font-weight: 300;
+  color: #da553b;
+}
+.section-py {
+  padding-top: 40px;
+}
+.font-medium p {
+  padding-top: 8px;
+  font-weight: 100;
+}
+@media (max-width: 600px) {
+  h3 a {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1450px) {
+  .font-medium {
+    font-size: 26px;
+  }
+  .font-medium p {
+    padding-top: 12px;
+  }
+}

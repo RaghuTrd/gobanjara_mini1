@@ -1,0 +1,306 @@
+<h2 style="" id="hm_heading" >View Our Collection</h2>
+<section class="main-grid1" >
+   <div class="card-img1">
+      {%- if section.settings.image1 != blank -%}
+      <div class="one-user">
+        <div id="img-one">
+          <img
+              width="200"
+              height="352"
+              loading="lazy" style="max-width:none;"
+              src="{{ section.settings.image1 | image_url }}"
+            >
+          </div>
+          <p class="sm-txt">Bags</p>
+      </div>
+      {%- endif -%} 
+     
+    {%- if section.settings.image2 != blank -%}
+      <div  class="two-user">
+         <div class="grid-info" >
+            <h4>New <br>
+              Collection</h4>
+            <p class="sm-txt"> T-shirts</p>
+            <a  href="#"><button id="shop_btn">Shop Now</button></a>
+        </div>
+        <img id="t-shirt_img"
+            width="280px"
+            height="352px"
+            loading="lazy"
+            src="{{ section.settings.image2 | image_url }}"
+          >
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="card-img2">
+   {%- if section.settings.image3 != blank -%}
+        <div style=" " class="three-user">
+           <p class="sm-txt">Journals</p>
+           <img
+                width="220px"
+                height="250px"
+                loading="lazy"  style="padding:20px 90px 30px 20px"
+                src="{{ section.settings.image3 | image_url }}"
+              >
+        </div>
+    {%- endif -%}
+  
+    {%- if section.settings.image4 != blank -%}
+        <div style=" " class="four-user">
+           <p  class="sm-txt">Home & Decor</p>
+          <img
+               width="330px"
+              height="370px"
+              loading="lazy"
+             style=""
+              src="{{ section.settings.image4 | image_url }}"
+            >
+        </div>
+      {%- endif -%}
+  </div>
+</section>
+
+<style>
+  #hm_heading{
+    color:#1F493E;
+    text-align:center;
+    font-size:43px;
+    font-weight:300
+  }
+  #t-shirt_img{
+    padding-right:30px;
+  }
+  .main-grid1{
+    background: #fffbef;
+    display:flex; 
+    padding: 10px 0px 70px 0px;
+    width:100%;
+  }
+  .card-img1 {
+    display: flex;
+    min-width:70%;
+  }
+  #img-one{
+    display:flex;
+    justify-content:center;
+  }
+  .card-img1 p{
+    font-size:20px;
+  }
+  .grid-info{
+    padding: 40px 20px 20px 60px
+  }
+  .grid-info p{
+    padding: 15px 5px 15px 0px; 
+    font-size:20px;
+    font-weight:200;
+  }
+  .grid-info h4{
+    color:#fff;
+    font-size:23px;
+  }
+  .one-user {
+    min-width:40%;
+    height: 417px;
+    background-size: cover;
+    background: #D0FEBE;
+    padding: 25px 80px 71px 70px;
+  }
+  .one-user p{
+    font-size:23px;
+    font-weight:100;
+    text-align:center;
+    margin-left:1.5rem;
+  }
+  .two-user {
+    display:flex;
+    color:#fff;
+    min-width: 60%;
+    height:416px;
+    justify-content:space-between;
+    background-size: cover;
+    background: #DA553B;
+    padding: 50px 0px 30px 0px;
+  }
+
+  .three {
+    height:130px;
+    background-size: cover;
+    background: #84E3E8;
+  }
+  .three-user {
+    min-width: 30%;
+    height:208px;
+    background-size: cover;
+    background: #84E3E8;
+     display:flex;  
+    justify-content:space-between;
+  }
+  .four-user {
+    min-width: 30%;
+    height:208px;
+    background-size: cover;
+    background: #AA98FC;
+    display:flex; 
+    justify-content:space-between;
+  } 
+   .four-user img , three-user img{
+    padding:20px 50px 30px 20px
+  }
+   #shop_btn {
+    cursor: pointer;  
+    border: none; 
+    border-bottom: .5px solid #fff; 
+    padding-bottom:4px;
+    outline: none; 
+    font-size:20px; 
+    font-weight:200;
+    }
+    .sm-txt{
+      font-weight:200;
+      font-size:20px;
+    }
+    .card-img2{
+      min-width:30%;
+    }
+  .card-img2 p{
+        margin-top: 70px;
+        padding-left:30px;
+        width:150px;
+        color:black;
+        font-size: 20px;
+        font-weight:100;
+        width: 70%
+  }   
+@media (max-width: 1020px) {
+  .main-grid1,
+  .card-img1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .grid-info{
+    padding:40px 15px;
+  }
+   #hm_heading{
+    font-size:25px;
+    text-align:center;
+  .one-user {
+    width: 100%;
+    height: 60%;
+  }
+  .one-user img {
+    height: 250px;
+    width: 70%;
+  }
+  .one-user p{
+    font-size:18px;
+  }
+  .card-img2 p{
+    font-size:16px;
+  }
+  .grid-info {
+    padding-left: 20px;
+    min-width: 180px;
+  }
+  .grid-info h4{
+    font-size:20px;
+  }
+   .grid-info p{
+     font-size:16px;
+   }
+  .two-user {
+    height: 300px;
+    padding-top: 20px;
+  }
+  #t-shirt_img {
+    height: 260px;
+    width: 180px;
+    padding-right:30px;
+  }
+  #shop_btn {
+    font-size:16x;
+  }
+}
+}
+  @media (min-width: 1450px){
+        .one-user p{
+          font-size:28px;
+        }
+       .two-user img{
+          height: 100%;
+          width: 40%;
+        }
+      .grid-info h4{
+        font-size:32px;
+      }
+      .card-img2 p{
+        font-size: 25px;
+        width: 40%
+      }
+      .grid-info p{
+        font-size:27px;
+      }
+        #shop_btn{
+          font-size:26px;
+        }
+      .card-img2 p {
+      font-size: 22px;
+      }
+  }
+
+  /* Source code css for global */
+  /* Source code css for global */
+
+  
+    @media (min-width:768px){
+      
+ 
+      }
+    }
+</style>
+
+{% schema %}
+{
+  "name": "three-images",
+  "settings": [
+    
+     {
+      "id":"desc",
+      "type": "text",
+      "label":"Decscription"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "image",
+    },
+     {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "image1",
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "image2",
+    },
+    {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "image3",
+    }
+     ,{
+      "type": "image_picker",
+      "id": "image4",
+      "label": "image4",
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "three-images"
+    }
+  ]
+}
+{% endschema %}

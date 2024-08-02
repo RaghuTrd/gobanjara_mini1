@@ -1,0 +1,261 @@
+{%- liquid 
+    assign st = section.settings
+  
+    assign animation_effect = settings.animations
+    assign animated = false
+    if animation_effect != 'none'
+      assign animated = true
+      if section.settings.animations != 'inherit'
+        assign animation_effect = section.settings.animations
+      endif
+    endif
+  -%}
+  <div  style="color:#1F493E; font-size:23px color: #1F493E;" class="sf__page-contact-us">
+    {% render 'page-title', title: page.title, container: true %}
+  </div>
+    <section class="contact-main" data-section-type="contact-page" data-section-id={{ section.id }}>
+<div class="{{ section.settings.container }} contact-flex mt-7 pb-7 xl:mt-15 xl:pb-15">    
+     <div class="flex flex-wrap-reverse xl:flex-wrap{% if animated %} sf-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+            <div class="contact-form">
+                {%- if st.title != blank -%}
+                <div style="display:flex; justify-content:center;">
+                    <h4 style='color:#1f493e; font-medium:300' class="text-2xl font-medium mb-2">{{ st.title }}</h4>
+                </div>
+                {%- endif -%}
+                {%- if st.description != blank -%}
+                <div style="color: var(--color-secondary);" class="mb-10">{{ st.description }}</div>
+                {%- endif -%}
+                {%- form 'contact' -%}
+                    {%- capture success_message -%}
+                    {{ 'contact.form.post_success' | t }}
+                    {%- endcapture -%}
+                    {% render 'form__success', form: form, success_message: success_message %}
+                    {% render 'form__error', form: form %}
+                    <div  class="grid grid_contact grid-cols-1 sm:grid-cols-2 mb-[15px] gap-4">
+                      {% if section.settings.show_name %}
+                        <div class="w-full">
+                            <input style="background-color:#fffbef;border-radius:0px;border-color:#1F493E" type="text" class="w-full align-middle inpt-line1" name="contact[name]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" id="inputName" placeholder="{{ 'contact.form.name' | t }}">
+                        </div>
+                        {% endif %} 
+                        {% if section.settings.show_name %}
+                        <div class="w-full">
+                            <input style=" color:black;background-color:#fffbef;border-radius:0px;border-color:#1F493E" type="email" class="w-full align-middle  inpt-line1" name="contact[email]" required autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" id="inputEmail" placeholder="{{ 'contact.form.email' | t }}">
+                        </div>
+                      {% endif %} 
+                    {% if section.settings.show_phone %}
+                    <div style=" background-color:#fffbef;" class="w-full col-span-2">
+                        <input style="background-color:#fffbef;border-radius:0px;border-color:#1F493Ex;border-color:#1F493E" type="tel" class="w-full align-middle" name="contact[phone]" autocorrect="off" autocapitalize="off" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" id="inputPhone" placeholder="{{ 'contact.form.phone' | t }}">
+                    </div>
+                    {% endif %}
+                    </div>
+                    <div style=" background-color:#fffbef;" class="grid mb-[20px]">
+                    <div class="w-full">
+                        <textarea  style="background-color:#fffbef;border-radius:0px;border-color:#1F493E" class="w-full align-middle cnt_text-area" name="contact[body]" rows="8" required placeholder="{{ 'contact.form.message' | t }}" id="textareaMessage">{%- if form.body -%}{{ form.body }}{%- endif -%}</textarea>
+                    </div>
+                    </div>
+                    <div class="pr-btn">
+                        <button style="background-color:inherit; font-weight:300;color:#1F493E; border-radius:0px;box-shadow:5px 5px #1F493E-full-color:#fffbef; font-weight:300;color:#1F493E; border-radius:0px;box-shadow:5px 5px #1F493E"
+                    type="submit" class="sf__btn sf__btn-primary">{{ 'contact.form.send' | t }}</button>
+                    </div>
+                {%- endform -%}
+            </div>
+        </div>
+      
+       <div class="g-map">
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.205149772033!2d78.38380077473903!3d17.449892401002387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb913004612a25%3A0x40fe6dafd3708aa7!2sTRD%20Studios%20%7C%20Business%20Life%20Cycle%20Management%20Company!5e0!3m2!1sen!2sin!4v1719995433048!5m2!1sen!2sin"
+        width="350"
+        height="308"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+        </iframe>
+      </div>
+</div>
+</section>
+  <style>
+    .contact-flex{
+      display:flex;
+      justify-content:space-between;
+    }
+    .contact-form{
+      width:100%;
+    }
+    .contact-line1:nth-child(1){
+      margin-left:10px;
+    }
+    .flex-wrap-reverse{
+      min-width:600px;
+    }
+    .inpt-line1{
+      min-width:270px;
+    }
+    .pr-btn{
+      display:flex;
+      justify-content:center;
+    }
+   .sf__btn .sf__btn-primary {
+     background-color:#fffbef;
+   }
+    .sf__page-contact-us{
+      height:100px;
+    }
+    .g-map{
+      min-width:600px;
+      padding-top:50px;
+    }
+    iframe{
+      width:100%;
+    }
+    
+   @media (min-width:1450px){
+     .contact-form,.g-map,.g-map iframe{
+       min-width:800px;
+     }
+   }
+  @media (max-width: 600px){
+    .contact-form{
+      width:300px;
+    }
+  }
+   @media (max-width: 1350px){
+     .g-map{
+       height:400px;
+       min-width:300px;
+        margin:5px;
+     }
+     .grid_contact{
+       display:flex;
+       justify-content:center;
+     }
+     .g-map{
+       height:400px;
+     }
+      .contact-form{
+        min-width:330px;
+      }
+    .contact-flex{
+      display:flex;
+      flex-direction:column;
+    }
+     .grid_contact{
+       display:flex;
+      flex-direction: column-reverse;
+     }
+   }
+  </style>
+  {% schema %}
+  {
+    "name": "Contact form",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "select",
+        "id": "container",
+        "label": "Container type",
+        "default": "container-fluid",
+        "options": [
+          {
+            "value": "container-fluid",
+            "label": "Default"
+          },
+          {
+            "value": "w-full",
+            "label": "Full width"
+          },
+          {
+            "value": "container",
+            "label": "Use container box"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "We would love to hear from you."
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description",
+        "default": "<p>If you’ve got great products your making or looking to work with us then drop us a line.</p>"
+      },
+      {
+        "type": "header",
+        "content": "Contact form"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_name",
+        "label": "Show field name",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_phone",
+        "label": "Show field phone number",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_signup_email",
+        "label": "Show email sign up",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Animations"
+      },
+      {
+        "type": "select",
+        "id": "animations",
+        "label": "Visible in the view animation",
+        "default": "inherit",
+        "options": [
+          {"value": "inherit", "label": "Inherit global setting"},
+          {"value": "fade-in", "label": "Fade in"},
+          {"value": "fade-in-up", "label": "Fade in up"},
+          {"value": "fade-in-left", "label": "Fade in left"},
+          {"value": "fade-in-right", "label": "Fade in right"}
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "textblock",
+        "name": "Text block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Block Title"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>7895 Piermont Dr NE Albuquerque, NM 198866, <a href='#'>See Our Stores</a></p>"
+          }
+        ]
+      },
+      {
+        "type": "socialmedia",
+        "name": "Social media",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Social Media"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}
+  

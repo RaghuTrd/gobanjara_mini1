@@ -1,0 +1,84 @@
+{{ 'about-us.css' | asset_url | stylesheet_tag }}
+<div id=hm_heading>
+  {% render 'page-title', title: page.title, container: true %}
+</div>
+
+<style>
+  #sf-custom__block--f5e88f1f-ff68-4d03-b686-0cb9fe62fab1 {
+  padding: 0px;
+  margin: 0px;
+  }
+  #sf-custom__block--9a3a8077-de29-4141-9162-b9484d4a85f8 
+  .about_sub{
+    margin-left:30px;
+    color:green;
+  }
+   #sf-custom__block--9a3a8077-de29-4141-9162-b9484d4a85f8 
+    .side_desc h2{
+      color:#1F493E;
+      font-weight:200;
+      font-size:55px;
+    },
+    #shopify-section-template--23041654194498__custom-content ul li {
+          display:flex;
+     }
+    #sf-custom__block--9a3a8077-de29-4141-9162-b9484d4a85f8 .abt_desc {
+    
+    }
+    #shopify-section-template--23041654194498__custom-content #about_img {
+      width:60px;
+    }
+    #shopify-section-template--23041654194498__custom-content ul li{
+      padding:20px 0px;
+    }
+   #shopify-section-template--23041654194498__custom-content ul li .abt_desc{
+     padding-left:30px;
+    padding-top: 52px;
+    background-color:red;
+   }
+    #shopify-section-template--23041654194498__custom-content .about_desc {
+    }
+  #shopify-section-template--23041654194498__custom-content .about_desc h4 {
+    font-weight:300;
+    }
+   #shopify-section-template--23041654194498__custom-content  .sf-logo-mobile{
+     width:0px;
+   }
+@media (min-width: 1450px){
+    #sf-custom__block--9a3a8077-de29-4141-9162-b9484d4a85f8 
+  .side_desc h2{
+    font-size:70px;
+  }
+  #shopify-section-template--23041654194498__custom-content p {
+    font-size:21px;
+  }
+    #shopify-section-template--23041654194498__custom-content .about_desc h4{
+      font-size:34px;
+    }
+    #shopify-section-template--23041654194498__custom-content p{
+      font-size:20px;
+    }
+    #shopify-section-template--23041654194498__custom-content #about_img{
+      width:80px;
+    }
+}
+
+</style>
+{% schema %}
+{
+  "name": "about-us",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "image",
+    },
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "about-us"
+    }
+  ]
+}
+{% endschema %}

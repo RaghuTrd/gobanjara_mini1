@@ -1,0 +1,91 @@
+<!-- <div class="form-success hide" data-reset-success>
+  {{ 'customer.recover_password.success' | t }}
+</div> -->
+<div class="text-center sf__page-header section__header">
+  <h1 style="color: #1f493e;font-weight:300;font-size:55px;
+  text-shadow: 3px 3px #84e3e8" class=" hd-lg section__heading">Account</h1>
+  {% render 'breadcrumb', container: 'container', justify: 'center' %}
+</div>
+<div class="sf-customer__forms pb-7 md:pb-15 md:w-11/12 lg:w-3/4 xl:w-2/3 2xl:w-1/2 md:flex mx-auto">
+  <div class="sf-customer__login mx-4 lg:mx-10 md:w-1/2">
+    <h4 style="color: #1f493e;" class="text-2xl font-medium mb:3 md:mb-6 hd-lg">Login</h4>
+    {% form 'recover_customer_password' %}
+      {% if form.posted_successfully? %}
+        <div class="notification show success mt-5 mb-2 text-base sf-customer__recover-form-posted">
+            {{ 'customer.recover_password.success' | t }}
+        </div>
+        {% endif %}
+        {% render 'form__error', form: form %}
+    {% endform %}
+    <div data-login-form class="flex flex-col-reverse">
+      {% form 'customer_login' %}
+      {%- comment -%}
+      {% if form.posted_successfully? %}
+      <div class="notification show success mb-3 text-base">
+          {{ 'customer.recover_password.success' | t }}
+      </div>
+      {% endif %}
+      {%- endcomment -%}
+      {% render 'form__error', form: form %}
+  
+      <input style=" background-color: inherit;color: black;border-color:#1F493E; border-radius:0px;
+    box-shadow: 4px 4px #1FD9DD;" type="email" name="customer[email]" placeholder="{{ 'customer.login.email' | t }}" class="inpt_clr form-control" />
+      <input style=" background-color: inherit; color: black; border-color:#1F493E;border-radius:0px;
+    box-shadow: 4px 4px #1FD9DD;" type="password" name="customer[password]" placeholder="{{ 'customer.login.password' | t }}" class="inpt_clr form-control" />
+  
+      <a class="underline block my-3 sf-customer__reset-password-btn">{{ 'customer.login.forgot_password' | t }}</a>
+      <button style="background-color:inherit;color:#1F493E;padding:8px" class="login_btn sf__btn sf__btn-primary mt-2  mb-3 w-full" type="submit">
+          {{ 'customer.login.sign_in' | t }}
+      </button>
+      {% endform %}
+    </div>
+  </div>
+  <div class="sf-customer__reset-password hidden mx-4 lg:mx-10 md:w-1/2">
+    <h4 style="color: #1f493e;"  class="hd-lg text-2xl font-medium">{{ 'customer.recover_password.title' | t }}</h4>
+    <p  style="color:black" class="mt-4 mb-2 text-color-secondary">{{ 'customer.recover_password.subtext' | t }}</p>
+
+    <div data-recover-form>
+      {% form 'recover_customer_password' %}
+      {% if form.posted_successfully? %}
+          <div class="notification show success mt-5 mb-2 text-base sf-customer__recover-form-posted">
+              {{ 'customer.recover_password.success' | t }}
+          </div>
+      {% endif %}
+      {% render 'form__error', form: form %}
+  
+      <input  style="background-color:inherit;border-color:#1F493E;padding:8px;border-radius:0px;border-color: #1F493E;color: #1F493E;box-shadow: 5px 5px #1FD9DD;" class="form-control" type="email" name="email"
+          placeholder="{{ 'customer.recover_password.email' | t }}" spellcheck="false" autocomplete="off"
+          autocapitalize="off" />
+  
+      <div class="flex mt-2">
+          <button style="background-color:inherit;color:#1F493E;padding:8px;border-radius:0px;border-color: #1F493E;color: #1F493E;" type="submit" class="login_btn sf__btn sf__btn-primary block w-40">
+              {{ 'customer.recover_password.submit' | t }}
+          </button>
+      </div>
+      {% endform %}
+    </div>
+  </div>
+  <div class="mx-4 lg:mx-10 md:w-1/2 mt-12 md:mt-0">
+    <h4 style="color: #1f493e;" class="hd-lg text-2xl font-medium mb-6">{{ 'customer.login.new_customer' | t }}</h4>
+    <p style="color:black" class="mb-6 text-color-secondary">
+        {{ 'customer.register.description' | t }}
+    </p>
+  <a href="https://www.gobanjara.in/account/register">
+    <input  style="background-color:inherit;color:#1F493E;padding:8px;border-radius:0px;border-color: #1F493E;color: #1F493E;" class="login_btn" type="button" value="Register">
+  </a>
+  </div>
+</div>
+
+<style>
+  .login_btn,.sf__btn-primar{
+    border-radius: 0px;
+    cursor:pointer; 
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 130px;
+    color: #1F493E;
+    background-color: #fffbef;
+    box-shadow: 5px 5px #1F493E;
+    border-color: #1F493E;
+  }
+</style>

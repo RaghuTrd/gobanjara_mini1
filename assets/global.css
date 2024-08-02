@@ -1,0 +1,149 @@
+#MainContent,
+.sf-header header,
+.sf__btn-primary,
+.m-menu-drawer__wrapper,
+.m-cart-drawer--inner {
+  background-color: #fffbef;
+}
+.sf-slider__controls {
+  display: none;
+}
+.f-price__sale,
+.pcard-variant-option,
+.sf__page-card,
+sup {
+  display: none;
+}
+.add-to-cart {
+  border-radius: 0px;
+  box-shadow: 4px 4px #1f493e;
+  color: #1f493e;
+}
+.shopify-payment-button__button {
+  background-color: #1f493e;
+  border-radius: 0px;
+}
+.quantity-input {
+  background-color: inherit;
+  box-shadow: 4px 4px #1f493e;
+  border-color: #1f493e;
+  border-radius: 0px;
+  color: #1f493e;
+  font-size: 17px;
+}
+.quantity-input__element {
+  background-color: inherit;
+}
+.mt-3 {
+  padding: 8px 15px 10px;
+  margin: 0px;
+  color: #da553b;
+  font-size: 15px;
+}
+.sf__pcard {
+  border: 1.5px solid #da553b;
+  box-shadow: 5px 5px #da553b;
+}
+#main-hd {
+  font-size: 40px;
+  margin-top: 20px;
+}
+.sf-menu__desktop-sub-menu {
+  min-width: 0px;
+}
+.mt-3 {
+  margin-top: 0px;
+  padding: 10px 15px 9px 20px;
+}
+#inpt-fild {
+  border-color: #1f493e;
+  border-radius: 0px;
+  background-color: inherit;
+  box-shadow: 5px 5px #1fd9dd;
+  width: 550px;
+}
+.page-header {
+  padding-top: 16px;
+  padding-bottom: 20px;
+}
+.text-base {
+  color: red;
+}
+h3 a {
+  font-size: 18px;
+  color: #da553b;
+  font-weight: 200;
+  margin: 0px;
+}
+#rg-btn {
+  width: 150px;
+  background-color: inherit;
+  color: #1f493e;
+  border-radius: 0px;
+  box-shadow: 4px 4px #1f493e;
+}
+.page-header__title {
+  color: #1f493e;
+  font-weight: 300;
+}
+h2,
+h1 {
+  color: red;
+  font-weight: 300;
+  font-size: 50px;
+  text-shadow: 3px 3px #84e3e8;
+}
+.tag-filter__color {
+  height: 15px;
+  width: 15px;
+  box-shadow: 0 0 0 2.5px #1f493e;
+  font-weight: 300;
+  border-radius: 0%;
+}
+input,
+select {
+  background-color: inherit;
+}
+.sf__pcard {
+  box-shadow: 5px 5px #da553b;
+}
+
+.border-b {
+  border-color: #da553b;
+}
+.border-r {
+  border-color: #1f493e;
+  border-right-width: 3px;
+}
+#shopify-section-template--23041654128962__collection_list_hPK9wY .section-py {
+  padding-top: 0px;
+}
+#sf__icon-box-template--23041654128962__icon_box_3dkcJN {
+  margin: 0 10%;
+}
+@media (max-width: 600px) {
+  .title-img {
+    padding: 0px 30px;
+  }
+  #copy-right {
+    display: none;
+  }
+  .footer-layout {
+    padding: 0px;
+  }
+  .sf-card {
+    box-shadow: 2px 2px #da553b;
+    border: 1px soild #da553b;
+  }
+  .f-price-item--regular {
+    font-size: 12px;
+  }
+  #hm_heading {
+    padding: 20px 0;
+  }
+}
+@media (min-width: 1450px) {
+  .sf__btn-primary {
+    padding: 14px 15px;
+  }
+}
