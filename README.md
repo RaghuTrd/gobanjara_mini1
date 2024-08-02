@@ -1,0 +1,1 @@
+# gobanjara_mini1
